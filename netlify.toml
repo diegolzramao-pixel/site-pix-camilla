@@ -1,0 +1,15 @@
+# Configuração para deploy de um site Next.js no Netlify
+# https://docs.netlify.com/integrations/frameworks/next-js/
+
+[build]
+  # Comando que o Netlify irá rodar para buildar seu site.
+  command = "npm run build"
+  
+  # Diretório que o Netlify irá servir após o build. 
+  # Para Next.js, é a pasta .next.
+  publish = ".next"
+
+[[plugins]]
+  # Plugin essencial do Netlify para Next.js.
+  # Ele configura automaticamente redirects, server functions (para Server Actions), e otimização de imagem.
+  package = "@netlify/plugin-nextjs"
